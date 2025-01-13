@@ -9,19 +9,20 @@ const App = () => {
   const [filteredData, setFilteredData] = useState([]);
 
   const fetchData = async (filters = {}) => {
-    const url = new URL("http://127.0.0.1:5000/financial-data");
-    Object.keys(filters).forEach((key) =>
-      filters[key] ? url.searchParams.append(key, filters[key]) : null
-    );
+      const url = new URL("/financial-data", window.location.origin);
+      Object.keys(filters).forEach((key) =>
+        filters[key] ? url.searchParams.append(key, filters[key]) : null
+      );
 
-    try {
-      const response = await axios.get(url.toString());
-      setData(response.data);
-      setFilteredData(response.data);
-    } catch (error) {
-      console.error("Error fetching data:", error);
-    }
+      try {
+        const response = await axios.get(url.toString());
+        setData(response.data);
+        setFilteredData(response.data);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
   };
+
 
   useEffect(() => {
     fetchData();
@@ -32,8 +33,8 @@ const App = () => {
   };
 
   return (
-    <div className="container mx-auto p-4">
-      <h1 className="text-2xl font-bold mb-4">Apple Financial Data</h1>
+    <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <h1 className="text-xl sm:text-2xl md:text-3xl font-bold mb-4">Apple (AAPL) Financial Data</h1>
       <Filters onFilter={applyFilters} />
       <Table data={filteredData} />
     </div>
