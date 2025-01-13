@@ -37,6 +37,7 @@
   },
   "proxy": "http://localhost:5000",
   "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@craco/craco": "^6.4.3",
     "@tailwindcss/postcss7-compat": "^2.2.17"
   },
