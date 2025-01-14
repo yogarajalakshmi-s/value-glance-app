@@ -17,3 +17,7 @@ Launches the development server, allowing you to view and test the app locally.
 
 ### `npm run build`
 Compiles and bundles the app for production deployment, optimizing performance and file sizes.
+
+## App screenshot
+![alt text](https://github.com/yogarajalakshmi-s/value-glance-app/blob/master/public/app-screenshot.png)
+
