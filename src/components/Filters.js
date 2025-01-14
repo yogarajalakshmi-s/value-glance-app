@@ -11,15 +11,15 @@ const Filters = ({ onFilter }) => {
   };
 
   return (
-    <div className="mb-4 flex flex-col gap-4">
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 mb-8 bg-white p-6 rounded-lg shadow-sm">
       <div>
-        <label className="block text-sm font-medium">Start Date</label>
+        <label className="block text-sm font-medium mb-1">Start Date</label>
         <input
           type="text"
           value={startDate}
           onChange={(e) => setStartDate(e.target.value)}
           placeholder="YYYY"
-          className="border p-2 rounded"
+          className="w-full p-2 border rounded-md shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
         />
       </div>
       <div>

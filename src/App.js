@@ -9,18 +9,23 @@ const App = () => {
   const [filteredData, setFilteredData] = useState([]);
 
   const fetchData = async (filters = {}) => {
-      const url = new URL("/financial-data", window.location.origin);
-      Object.keys(filters).forEach((key) =>
-        filters[key] ? url.searchParams.append(key, filters[key]) : null
-      );
-
-      try {
-        const response = await axios.get(url.toString());
+    try {
+        const response = await axios.get('http://127.0.0.1:5000/financial-data', {
+            params: filters,
+            headers: {
+                'Content-Type': 'application/json',
+                'Access-Control-Allow-Origin': '*'
+            }
+        });
         setData(response.data);
         setFilteredData(response.data);
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      }
+    } catch (error) {
+        if (error.code === 'ERR_NETWORK') {
+            console.error('Network error:', error.message);
+        } else {
+            console.error('Error fetching data:', error);
+        }
+    }
   };
 
 
@@ -33,7 +38,7 @@ const App = () => {
   };
 
   return (
-    <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="container mx-auto px-4 py-8 max-w-7xl">
       <h1 className="text-xl sm:text-2xl md:text-3xl font-bold mb-4">Apple (AAPL) Financial Data</h1>
       <Filters onFilter={applyFilters} />
       <Table data={filteredData} />

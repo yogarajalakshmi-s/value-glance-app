@@ -3,20 +3,21 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "autoprefixer": "^10.4.20",
     "axios": "^1.7.9",
     "core-js": "^3.23.3",
     "cors": "^2.8.5",
     "cra-template": "1.2.0",
-    "postcss": "^8.5.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-scripts": "^5.0.1",
-    "web-vitals": "^4.2.4"
+    "react-scripts": "^4.0.3",
+    "autoprefixer": "^9.8.6",
+    "postcss": "^7.0.39",
+    "web-vitals": "^4.2.4",
+    "tailwindcss": "^3.0.0"
   },
   "scripts": {
     "start": "react-scripts --openssl-legacy-provider start",
-    "build": "GENERATE_SOURCEMAP=false react-scripts --openssl-legacy-provider build",
+    "build": "react-scripts --openssl-legacy-provider build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -38,9 +39,14 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "http://localhost:5000",
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
-    "@craco/craco": "^6.4.3"
+    "@craco/craco": "^6.4.3",
+    "@tailwindcss/postcss7-compat": "^2.2.17"
+  },
+  "overrides": {
+    "postcss": "^7.0.39",
+    "autoprefixer": "^9.8.6",
+    "@tailwindcss/postcss7-compat": "^2.2.17"
   }
 }

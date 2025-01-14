@@ -25,18 +25,18 @@ const Table = ({ data }) => {
   };
 
   return (
-    <div className="overflow-x-auto shadow-md rounded-lg">
-      <table className="min-w-full bg-white">
-        <thead className="bg-gray-100">
+    <div className="overflow-x-auto -mx-4 sm:-mx-6 lg:-mx-8">
+      <table className="min-w-full divide-y divide-gray-200 shadow-sm rounded-lg">
+        <thead className="bg-gray-50">
           <tr>
-            <th onClick={() => handleSort('date')} className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer hover:bg-gray-200">
-              Date {sortConfig.key === 'date' && (sortConfig.direction === 'asc' ? '↑' : '↓')}
+            <th onClick={() => handleSort('date')} className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer hover:bg-gray-100 transition-colors">
+              Date {sortConfig.key === 'date' && sortConfig.direction === 'asc' ? '↑' : '↓'}
             </th>
-            <th onClick={() => handleSort('revenue')} className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer hover:bg-gray-200">
-              Revenue {sortConfig.key === 'revenue' && (sortConfig.direction === 'asc' ? '↑' : '↓')}
+            <th onClick={() => handleSort('revenue')} className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer hover:bg-gray-100 transition-colors">
+              Revenue {sortConfig.key === 'revenue' && sortConfig.direction === 'asc' ? '↑' : '↓'}
             </th>
-            <th onClick={() => handleSort('netIncome')} className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer hover:bg-gray-200">
-              Net Income {sortConfig.key === 'netIncome' && (sortConfig.direction === 'asc' ? '↑' : '↓')}
+            <th onClick={() => handleSort('netIncome')} className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer hover:bg-gray-100 transition-colors">
+              Net Income {sortConfig.key === 'netIncome' && sortConfig.direction === 'asc' ? '↑' : '↓'}
             </th>
             <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Gross Profit</th>
             <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">EPS</th>
